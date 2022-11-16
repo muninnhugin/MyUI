@@ -1,3 +1,5 @@
+// TODO: test if this actually works
+
 let search_form = jQuery("#search-form");
 let search_entries_container = jQuery("#search-entries-container");
 let prev_button = jQuery("#prev_page_button");
@@ -30,7 +32,6 @@ function populateData()
     search_entries_container.clear();
     for(let i = page_number * MAX_ENTRIES_PER_PAGE; i < (page_number + 1) * MAX_ENTRIES_PER_PAGE; ++i)
     {
-        // TODO: implement pagination
         // TODO: change row variables to reflect csv format
         let url = allRows[i];
         let title = allRows[i];
@@ -57,10 +58,7 @@ function handlePrev(pageTransitionEvent)
 
 function handleNext(pageTransitionEvent)
 {
-    if(page_number <= 0)
-    {
-        return 0;
-    }
+    // TODO: see if it is possible to check for max page number
 
     ++page_number;
     populateData();
